@@ -1,5 +1,6 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Projects = () => {
   return (
@@ -8,6 +9,50 @@ const Projects = () => {
         <h2 className="section-heading">Featured Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Treasury Yield Prediction Project */}
+          <div className="project-card group">
+            <div className="bg-muted/50 rounded-md p-4 mb-4">
+              <h3 className="text-xl font-bold text-olive mb-1">Treasury Yield Prediction Model</h3>
+              <p className="text-muted-foreground mb-4">Data Science Group Project - Lehigh University</p>
+            </div>
+            
+            <p className="mb-4">
+              Developed a machine learning model to predict the U.S. 10-Year Treasury Yield for investors using 
+              supervised learning and linear regression. The project combined data science methodologies with 
+              financial domain knowledge to create a predictive model with improved accuracy.
+            </p>
+            
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2">Technical Highlights:</h4>
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Created linear regression models using economic indicators as features</li>
+                <li>Implemented binary classification for yield direction prediction with 75% accuracy</li>
+                <li>Reduced Mean Absolute Error (MAE) by 15% compared to baseline</li>
+                <li>Performed data cleaning and feature engineering in R Studio</li>
+                <li>Applied feature selection algorithms to optimize model performance</li>
+              </ul>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="bg-muted text-xs px-2 py-1 rounded">R</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Linear Regression</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Decision Trees</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Data Cleaning</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Financial Analysis</span>
+            </div>
+            
+            <Button variant="ghost" size="sm" className="flex items-center text-sm font-medium text-olive hover:text-opacity-80 transition-opacity">
+              <a 
+                href="/Treasury-Yield-Prediction-Project.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                View Research Paper <FileText className="ml-1 w-4 h-4" />
+              </a>
+            </Button>
+          </div>
+          
           {/* AI/ML Capstone Project */}
           <div className="project-card group">
             <div className="bg-muted/50 rounded-md p-4 mb-4">
