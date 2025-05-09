@@ -89,39 +89,32 @@ const Projects = () => {
           <div className="project-card group">
             <div className="bg-muted/50 rounded-md p-4 mb-4">
               <h3 className="text-xl font-bold text-olive mb-1">Roblox Game Development Portfolio</h3>
-              <p className="text-muted-foreground mb-4">Freelance Developer</p>
+              <p className="text-muted-foreground mb-4">CTO, Independent Game Studio | Freelance Developer</p>
             </div>
             
             <p className="mb-4">
-              Created interactive game projects as a freelance developer on the Roblox platform, 
-              combining programming skills with game design principles to deliver engaging user experiences.
+              Leading game development at an early-stage studio with an audience of 800+ pre-launch followers. 
+              Created multiple interactive Roblox games, focusing on scalable systems, responsive UI/UX, 
+              and performance optimization.
             </p>
             
             <div className="mb-4">
-              <h4 className="font-semibold mb-2">Project Scope:</h4>
+              <h4 className="font-semibold mb-2">Key Highlights:</h4>
               <ul className="list-disc ml-5 space-y-1">
-                <li>Developed interactive game mechanics and systems</li>
-                <li>Implemented efficient UI/UX design patterns</li>
-                <li>Optimized performance for smooth gameplay experience</li>
-                <li>Collaborated with clients to meet project specifications</li>
+                <li>Spearheading launch of a new Roblox title targeting 800+ early followers</li>
+                <li>Designed core game mechanics and modular gameplay systems</li>
+                <li>Engineered reusable UI/UX patterns for consistency and responsiveness</li>
+                <li>Improved frame performance by optimizing rendering and physics logic</li>
+                <li>Oversaw team deliverables and collaborated with clients on specs</li>
               </ul>
             </div>
             
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="bg-muted text-xs px-2 py-1 rounded">Lua</span>
-              <span className="bg-muted text-xs px-2 py-1 rounded">Game Development</span>
-              <span className="bg-muted text-xs px-2 py-1 rounded">UI/UX Design</span>
               <span className="bg-muted text-xs px-2 py-1 rounded">Roblox Studio</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">UI/UX Design</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Game Systems Architecture</span>
             </div>
-            
-            <a 
-              href="https://create.roblox.com/talent/creators/21206181" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center text-sm font-medium text-olive hover:text-opacity-80 transition-opacity"
-            >
-              View Roblox Talent Profile <ArrowRight className="ml-1 w-4 h-4" />
-            </a>
           </div>
         </div>
       </div>
