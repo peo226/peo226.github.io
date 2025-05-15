@@ -1,7 +1,9 @@
+import myChart from './Chart'; // Import the Pie chart component
+
 
 const Skills = () => {
   const programmingLanguages = [
-    "Java", "Python", "Lua", "C", "R", "SQL", "Dart", "Rust", "JavaScript", "HTML/CSS"
+    "Java", "Python", "C", "R", "SQL", "Dart", "Rust", "JavaScript", "HTML/CSS", "LuaU"
   ];
   
   const frameworks = [
@@ -40,18 +42,6 @@ const Skills = () => {
           </div>
         </div>
         
-        {/* Skill Bars - Specialized knowledge */}
-        <div className="mt-12 bg-white p-6 rounded-lg shadow-sm border border-border">
-          <h3 className="text-xl font-semibold mb-6 text-olive">Specialized Knowledge</h3>
-          
-          <div className="space-y-6">
-            <SkillBar name="Software Engineering" percentage={90} />
-            <SkillBar name="Machine Learning" percentage={85} />
-            <SkillBar name="Game Development" percentage={80} />
-            <SkillBar name="Data Science" percentage={75} />
-            <SkillBar name="Web Development" percentage={70} />
-          </div>
-        </div>
       </div>
     </section>
   );
