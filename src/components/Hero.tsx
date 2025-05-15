@@ -11,7 +11,7 @@ const Hero = () => {
               Prince Omuyeh
             </h1>
             <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 text-lavender">
-              Software Engineer | Machine Learning Enthusiast | Game Developer
+              Software Engineer | AI & ML Enthusiast | Game Developer
             </h2>
  
             <div className="flex flex-col sm:flex-row gap-4">
@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
           <div className="md:w-1/3 w-2/3 aspect-square rounded-full overflow-hidden border-4 border-olive">
             <img
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format"
+              src="/pfp.png"
               alt="Prince Omuyeh (Placeholder)"
               className="w-full h-full object-cover"
             />
