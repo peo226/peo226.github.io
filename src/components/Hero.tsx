@@ -10,14 +10,10 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-olive">
               Prince Omuyeh
             </h1>
-            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 text-lavender">
               Software Engineer | Machine Learning Enthusiast | Game Developer
             </h2>
-            <p className="text-lg mb-8 max-w-lg">
-              I'm a Computer Science student with a passion for software engineering and machine learning. 
-              Outside of academics, I take on freelance video game development projects, blending creativity 
-              with technology to build interactive experiences.
-            </p>
+ 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#projects"
