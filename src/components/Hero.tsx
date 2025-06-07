@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-olive">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-tan">
               Prince Omuyeh
             </h1>
             <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 text-lavender">
