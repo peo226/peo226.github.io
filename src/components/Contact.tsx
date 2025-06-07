@@ -54,7 +54,7 @@ const Contact = () => {
         <h2 className="section-heading">Get In Touch</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/*{/* Contact Form }
           <div>
             <h3 className="text-xl font-semibold mb-4">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -127,12 +127,13 @@ const Contact = () => {
               )}
             </form>
           </div>
+          */}
 
           {/* Contact Information */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
             <p className="mb-6">
-              Feel free to contact me directly through any of these channels. I'm always open to discussing new projects, opportunities, or just chatting about technology.
+              Feel free to contact me directly through any of these channels. I'm always open to discussion!
             </p>
 
             <div className="space-y-4">

@@ -18,7 +18,7 @@ const About = () => {
               My academic journey has been focused on building a strong foundation in algorithm design, data structures, and 
               artificial intelligence principles.
             </p>
-            <p>
+            <p className="mb-4">
               I'm super interested in exploring how AI and machine learning can enhance 
               user experiences in both traditional software applications and interactive media. 
               My goal is to continue developing my skills and knowledge to contribute meaningfully 

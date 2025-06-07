@@ -53,39 +53,6 @@ const Projects = () => {
             </Button>
           </div>
 
-          {/* Roblox Game Development */}
-          <div className="project-card group">
-            <div className="bg-muted/50 rounded-md p-4 mb-4">
-              <h3 className="text-xl font-bold text-olive mb-1">Roblox Game Development</h3>
-              <p className="text-muted-foreground mb-4">CTO, Independent Game Studio | Freelance Developer</p>
-            </div>
-
-            <p className="mb-4">
-              Leading game development at an early-stage studio with an audience of 800+ pre-launch followers.
-              Created multiple interactive Roblox games, focusing on scalable systems, responsive UI/UX,
-              and performance optimization.
-            </p>
-
-            <div className="mb-4">
-              <h4 className="font-semibold mb-2">Key Highlights:</h4>
-              <ul className="list-disc ml-5 space-y-1">
-                <li>Spearheading launch of a new Roblox title targeting 800+ early followers</li>
-                <li>Designed core game mechanics and modular gameplay systems</li>
-                <li>Engineered reusable UI/UX patterns for consistency and responsiveness</li>
-                <li>Improved frame performance by optimizing rendering and physics logic</li>
-                <li>Oversaw team deliverables and collaborated with clients on specs</li>
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span className="bg-muted text-xs px-2 py-1 rounded">Lua</span>
-              <span className="bg-muted text-xs px-2 py-1 rounded">Roblox Studio</span>
-              <span className="bg-muted text-xs px-2 py-1 rounded">UI/UX Design</span>
-              <span className="bg-muted text-xs px-2 py-1 rounded">Game Systems Architecture</span>
-            </div>
-          </div>
-
-
           {/* Data Mining Class Project: SVM */}
           <div className="project-card group">
             <div className="bg-muted/50 rounded-md p-4 mb-4">
@@ -126,7 +93,6 @@ const Projects = () => {
               </a>
             </Button>
           </div>
-
 
           {/* Treasury Yield Prediction Project */}
           <div className="project-card group">
@@ -203,6 +169,38 @@ const Projects = () => {
               <span className="bg-muted text-xs px-2 py-1 rounded">SQL</span>
             </div>
 
+          </div>
+
+          {/* Roblox Game Development */}
+          <div className="project-card group">
+            <div className="bg-muted/50 rounded-md p-4 mb-4">
+              <h3 className="text-xl font-bold text-olive mb-1">Roblox Game Development</h3>
+              <p className="text-muted-foreground mb-4">CTO, Independent Game Studio | Freelance Developer</p>
+            </div>
+
+            <p className="mb-4">
+              Leading game development at an early-stage studio with an audience of 800+ pre-launch followers.
+              Created multiple interactive Roblox games, focusing on scalable systems, responsive UI/UX,
+              and performance optimization.
+            </p>
+
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2">Key Highlights:</h4>
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Spearheading launch of a new Roblox title targeting 800+ early followers</li>
+                <li>Designed core game mechanics and modular gameplay systems</li>
+                <li>Engineered reusable UI/UX patterns for consistency and responsiveness</li>
+                <li>Improved frame performance by optimizing rendering and physics logic</li>
+                <li>Oversaw team deliverables and collaborated with clients on specs</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-muted text-xs px-2 py-1 rounded">Lua</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Roblox Studio</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">UI/UX Design</span>
+              <span className="bg-muted text-xs px-2 py-1 rounded">Game Systems Architecture</span>
+            </div>
           </div>
 
 

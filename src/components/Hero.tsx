@@ -30,7 +30,7 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div className="md:w-1/3 w-2/3 aspect-square rounded-full overflow-hidden border-4 border-olive">
+          <div className="md:w-1/3 w-2/3 aspect-square rounded-full overflow-hidden border-4 border-tan">
             <img
               src="/pfp.png"
               alt="Prince Omuyeh (Placeholder)"
