@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
           <div className="md:w-1/3 w-2/3 aspect-square rounded-full overflow-hidden border-4 border-tan">
             <img
-              src="/pfp.png"
+              src="/pfp.jpg"
               alt="Prince Omuyeh (Placeholder)"
               className="w-full h-full object-cover"
             />
