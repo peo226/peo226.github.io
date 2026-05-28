@@ -74,8 +74,9 @@ const About = () => {
             {/* Bio */}
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
-                "My academic journey has been focused on building a strong foundation in algorithm design, data structures, and AI. with a particular interest in how machine learning can enhance both traditional software and interactive experiences.",
-                "I've applied that interest across a range of projects including real-time computer vision systems for cyclist safety, financial forecasting models, and distributed systems built from scratch.",
+               
+                "My academic journey has been focused on building a strong foundation in systems design, applied AI/ML, and UI/UX development.",
+                "I have applied the skills that I've developed across a range of projects including: real-time computer vision systems for cyclist safety, financial forecasting models, and distributed systems built from scratch.",
                 "Outside of that, I spend time in game development. I've been leading a multiplayer Roblox title with a 2000+ member community, which has been a great space to blend technical depth with creative product thinking.",
               ].map((para, i) => (
                 <p key={i} style={{ color: "var(--text-secondary)", fontSize: "15px", lineHeight: 1.75 }}>
