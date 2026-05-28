@@ -109,7 +109,7 @@ const About = () => {
                   { label: "Focus", value: "Data Science, AI & ML" },
                   { label: "Side project", value: "Roblox game dev (2k+ community)" },
                   { label: "Languages", value: "Python, Java, C++, JS, R, Lua" },
-                  { label: "Currently into", value: "Distributed systems & AI" },
+                  { label: "Currently into", value: "Systems Programming & AI" },
                   { label: "Based in", value: "Pennsylvania, USA" },
                 ].map(({ label, value }) => (
                   <li key={label} style={{ display: "flex", gap: "12px" }}>
