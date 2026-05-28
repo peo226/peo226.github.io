@@ -31,9 +31,7 @@ const Contact = () => {
               lineHeight: 1.75,
               maxWidth: "380px",
             }}>
-              I'm actively looking for new opportunities — whether it's a full-time role,
-              a freelance project, or just a good conversation about tech and ideas.
-              My inbox is always open.
+              I'm actively seeking new opportunites and personal connections. Feel free to reach out anytime!
             </p>
 
             <a

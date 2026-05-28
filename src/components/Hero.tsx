@@ -3,9 +3,9 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 const ROLES = [
   "Software Engineer",
-  "ML Enthusiast",
+  "AI Enthusiast",
   "Game Developer",
-  "Full-Stack Builder",
+  "System Designer",
 ];
 
 const Hero = () => {

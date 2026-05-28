@@ -74,9 +74,9 @@ const About = () => {
             {/* Bio */}
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {[
-                "My academic journey has been focused on building a strong foundation in algorithm design, data structures, and AI — with a particular interest in how machine learning can enhance both traditional software and interactive experiences.",
-                "I've applied that interest across a range of projects: from real-time computer vision systems for cyclist safety, to financial forecasting models, to distributed systems built from scratch.",
-                "Outside of that, I spend time in game development — I've been leading a multiplayer Roblox title with a 2000+ member community, which has been a great space to blend technical depth with creative product thinking.",
+                "My academic journey has been focused on building a strong foundation in algorithm design, data structures, and AI. with a particular interest in how machine learning can enhance both traditional software and interactive experiences.",
+                "I've applied that interest across a range of projects including real-time computer vision systems for cyclist safety, financial forecasting models, and distributed systems built from scratch.",
+                "Outside of that, I spend time in game development. I've been leading a multiplayer Roblox title with a 2000+ member community, which has been a great space to blend technical depth with creative product thinking.",
               ].map((para, i) => (
                 <p key={i} style={{ color: "var(--text-secondary)", fontSize: "15px", lineHeight: 1.75 }}>
                   {para}
@@ -108,7 +108,7 @@ const About = () => {
                   { label: "Focus", value: "Data Science, AI & ML" },
                   { label: "Side project", value: "Roblox game dev (2k+ community)" },
                   { label: "Languages", value: "Python, Java, C++, JS, R, Lua" },
-                  { label: "Currently into", value: "Distributed systems & CV" },
+                  { label: "Currently into", value: "Distributed systems & AI" },
                   { label: "Based in", value: "Pennsylvania, USA" },
                 ].map(({ label, value }) => (
                   <li key={label} style={{ display: "flex", gap: "12px" }}>

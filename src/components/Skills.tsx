@@ -14,11 +14,7 @@ const skillGroups = [
     color: "accent",
     items: ["Git", "Docker", "Linux", "Jira/Atlassian", "Agile/Scrum", "Roblox Studio", "TensorBoard", "PostgreSQL"],
   },
-  {
-    label: "Domains",
-    color: "cyan",
-    items: ["Machine Learning", "Computer Vision", "Data Mining", "Distributed Systems", "REST APIs", "OAuth / Auth", "UI/UX Design", "Game Development"],
-  },
+ 
 ];
 
 const Skills = () => {

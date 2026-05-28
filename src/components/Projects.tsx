@@ -41,10 +41,10 @@ const projects: Project[] = [
     highlights: [
       "Implemented YOLOv8/YOLOv11 for real-time object detection at the edge",
       "Focused on depth prediction, model optimization, and dataset expansion",
-      "Utilized TensorFlow, Keras, Python, and TensorBoard for training and evaluation",
+      "Utilized TensorFlow, Keras, and Python for training and evaluation",
       "Followed Agile methodologies in collaboration with startup founders",
     ],
-    tags: ["TensorFlow", "Keras", "Python", "YOLOv8", "Computer Vision", "TensorBoard"],
+    tags: ["TensorFlow", "Keras", "Python", "YOLOv8", "Computer Vision", ],
     tagColor: "accent",
     links: [
       { label: "Hawkeye Website", href: "https://hawkeye.bike/", Icon: ExternalLink },
@@ -52,7 +52,7 @@ const projects: Project[] = [
   },
   {
     title: "Distributed Replicated Hash Table",
-    subtitle: "Systems Project — CSE 376",
+    subtitle: "Systems Project — Lehigh University",
     description:
       "Implemented a distributed hash table across a 5-node system with support for atomic operations, data replication, and fault tolerance. Built from scratch in C++ with no external distributed systems frameworks.",
     highlights: [
@@ -67,7 +67,7 @@ const projects: Project[] = [
   },
   {
     title: "E-Commerce Mobile UI",
-    subtitle: "UX Design — DES 173",
+    subtitle: "UI/UX Design — Lehigh University",
     description:
       "A high-fidelity mobile UI/UX prototype for an e-commerce platform, designed in Figma. Covers the full shopping flow from browsing to checkout, optimized for mobile interaction patterns and accessibility.",
     highlights: [
