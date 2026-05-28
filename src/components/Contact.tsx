@@ -1,173 +1,139 @@
-import { useState } from "react";
-import { Mail, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
-import emailjs from "emailjs-com"; // Import EmailJS
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus("submitting");
-
-    // Use EmailJS to send the form data
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!, // Access service ID from .env
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, // Access template ID from .env
-        formData,
-        process.env.REACT_APP_EMAILJS_USER_ID! // Access user ID from .env
-      )
-      .then(
-        () => {
-          setSubmitStatus("success");
-          setFormData({ name: "", email: "", message: "" });
-
-          // Reset status after 3 seconds
-          setTimeout(() => {
-            setSubmitStatus("idle");
-          }, 3000);
-        },
-        () => {
-          setSubmitStatus("error");
-          setTimeout(() => {
-            setSubmitStatus("idle");
-          }, 3000);
-        }
-      );
-  };
-
   return (
-    <section id="contact" className="bg-muted/30">
-      <div className="container mx-auto">
-        <h2 className="section-heading">Get In Touch</h2>
+    <section id="contact" style={{ background: "var(--bg-secondary)" }}>
+      <div className="container">
+        <h2 className="section-heading">contact</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/*{/* Contact Form }
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "48px",
+          alignItems: "start",
+        }} className="contact-grid">
+          {/* Left — CTA text */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Send Me a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all"
-                  placeholder="Your email"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-2 rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all resize-none"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={submitStatus === "submitting"}
-                className={`w-full bg-olive text-white py-3 rounded-md transition-all ${submitStatus === "submitting" ? "opacity-70 cursor-not-allowed" : "hover:bg-opacity-90"}`}
-              >
-                {submitStatus === "submitting" ? "Sending..." : "Send Message"}
-              </button>
-
-              {submitStatus === "success" && (
-                <div className="bg-green-50 text-green-800 px-4 py-2 rounded-md text-sm">
-                  Your message was sent successfully. I'll get back to you soon!
-                </div>
-              )}
-
-              {submitStatus === "error" && (
-                <div className="bg-red-50 text-red-800 px-4 py-2 rounded-md text-sm">
-                  There was an error sending your message. Please try again.
-                </div>
-              )}
-            </form>
-          </div>
-          */}
-
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-            <p className="mb-6">
-              Feel free to contact me directly through any of these channels. I'm always open to discussion!
+            <h3 style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "clamp(24px, 4vw, 36px)",
+              fontWeight: 700,
+              color: "var(--text-primary)",
+              lineHeight: 1.3,
+              marginBottom: "20px",
+            }}>
+              Let's build<br />
+              <span style={{ color: "var(--accent-bright)" }}>something great.</span>
+            </h3>
+            <p style={{
+              fontSize: "15px",
+              color: "var(--text-secondary)",
+              lineHeight: 1.75,
+              maxWidth: "380px",
+            }}>
+              I'm actively looking for new opportunities — whether it's a full-time role,
+              a freelance project, or just a good conversation about tech and ideas.
+              My inbox is always open.
             </p>
 
-            <div className="space-y-4">
-              <a
-                href="mailto:princeomuyeh@gmail.com"
-                className="flex items-center gap-3 p-3 bg-white rounded-md border border-border hover:shadow-md transition-shadow"
-              >
-                <div className="bg-olive/10 rounded-full p-2">
-                  <Mail className="w-5 h-5 text-olive" />
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">princeomuyeh@gmail.com</p>
-                </div>
-              </a>
+            <a
+              href="mailto:princeomuyeh@gmail.com"
+              className="btn-primary"
+              style={{ marginTop: "32px", display: "inline-flex" }}
+            >
+              <Mail size={15} />
+              Say hello
+            </a>
+          </div>
 
+          {/* Right — contact cards */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            {[
+              {
+                Icon: Mail,
+                label: "Email",
+                value: "princeomuyeh@gmail.com",
+                href: "mailto:princeomuyeh@gmail.com",
+              },
+              {
+                Icon: Linkedin,
+                label: "LinkedIn",
+                value: "prince-omuyeh-828517218",
+                href: "https://www.linkedin.com/in/prince-omuyeh-828517218/",
+              },
+              {
+                Icon: Github,
+                label: "GitHub",
+                value: "peo226",
+                href: "https://github.com/peo226",
+              },
+            ].map(({ Icon, label, value, href }) => (
               <a
-                href="https://www.linkedin.com/in/prince-omuyeh-828517218/"
-                target="_blank"
+                key={label}
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 bg-white rounded-md border border-border hover:shadow-md transition-shadow"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px",
+                  padding: "18px 20px",
+                  background: "var(--bg-tertiary)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-md)",
+                  textDecoration: "none",
+                  transition: "var(--transition)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(124,106,247,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.background = "var(--bg-card)";
+                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateX(4px)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--border)";
+                  (e.currentTarget as HTMLAnchorElement).style.background = "var(--bg-tertiary)";
+                  (e.currentTarget as HTMLAnchorElement).style.transform = "none";
+                }}
               >
-                <div className="bg-olive/10 rounded-full p-2">
-                  <Linkedin className="w-5 h-5 text-olive" />
+                <div style={{
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "var(--radius-sm)",
+                  background: "var(--accent-dim)",
+                  border: "1px solid rgba(124,106,247,0.2)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}>
+                  <Icon size={17} color="var(--accent-bright)" />
                 </div>
                 <div>
-                  <p className="font-medium">LinkedIn</p>
-                  <p className="text-muted-foreground">prince-omuyeh-828517218</p>
+                  <p style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "11px",
+                    color: "var(--text-muted)",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    marginBottom: "2px",
+                  }}>
+                    {label}
+                  </p>
+                  <p style={{ fontSize: "14px", color: "var(--text-primary)" }}>
+                    {value}
+                  </p>
                 </div>
               </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
     </section>
   );
 };

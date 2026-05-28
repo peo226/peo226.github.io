@@ -1,66 +1,98 @@
-import myChart from './Chart'; // Import the Pie chart component
-
+const skillGroups = [
+  {
+    label: "Languages",
+    color: "accent",
+    items: ["Python", "Java", "C++", "JavaScript", "SQL", "R", "C#", "Dart", "Rust", "LuaU", "HTML/CSS"],
+  },
+  {
+    label: "Frameworks & Libraries",
+    color: "cyan",
+    items: ["React", "Flutter", "Spring", "Maven", "Node.js", "Supabase", "TensorFlow", "Keras", "scikit-learn"],
+  },
+  {
+    label: "Tools & Platforms",
+    color: "accent",
+    items: ["Git", "Docker", "Linux", "Jira/Atlassian", "Agile/Scrum", "Roblox Studio", "TensorBoard", "PostgreSQL"],
+  },
+  {
+    label: "Domains",
+    color: "cyan",
+    items: ["Machine Learning", "Computer Vision", "Data Mining", "Distributed Systems", "REST APIs", "OAuth / Auth", "UI/UX Design", "Game Development"],
+  },
+];
 
 const Skills = () => {
-  const programmingLanguages = [
-    "Java", "Python", "C", "R", "SQL", "Dart", "Rust", "JavaScript", "HTML/CSS", "LuaU"
-  ];
-  
-  const frameworks = [
-    "React", "Flutter", "Git", "Agile", "Linux", "Atlassian", 
-    "OpenAI APIs", "Data Visualization", "Data Mining"
-  ];
-
   return (
-    <section id="skills" className="bg-muted/30">
-      <div className="container mx-auto">
-        <h2 className="section-heading">My Skills</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Programming Languages */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-border">
-            <h3 className="text-xl font-semibold mb-4 text-olive">Programming Languages</h3>
-            <div className="flex flex-wrap gap-3">
-              {programmingLanguages.map((language, index) => (
-                <div key={index} className="skill-item">
-                  {language}
-                </div>
-              ))}
+    <section id="skills" style={{ background: "var(--bg-secondary)" }}>
+      <div className="container">
+        <h2 className="section-heading">skills</h2>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "20px",
+        }}>
+          {skillGroups.map(({ label, color, items }) => (
+            <div key={label} style={{
+              background: "var(--bg-tertiary)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)",
+              padding: "24px",
+              transition: "var(--transition)",
+            }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = color === "cyan"
+                  ? "rgba(34,211,238,0.3)"
+                  : "rgba(124,106,247,0.3)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border)";
+              }}
+            >
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "11px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: color === "cyan" ? "var(--accent-cyan)" : "var(--accent-bright)",
+                marginBottom: "16px",
+              }}>
+                {label}
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                {items.map((item) => (
+                  <span
+                    key={item}
+                    className={`skill-item`}
+                    style={color === "cyan" ? {
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "12px",
+                      color: "var(--text-secondary)",
+                    } : undefined}
+                    onMouseEnter={e => {
+                      if (color === "cyan") {
+                        (e.currentTarget as HTMLSpanElement).style.color = "var(--accent-cyan)";
+                        (e.currentTarget as HTMLSpanElement).style.borderColor = "rgba(34,211,238,0.4)";
+                        (e.currentTarget as HTMLSpanElement).style.background = "var(--accent-cyan-dim)";
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      if (color === "cyan") {
+                        (e.currentTarget as HTMLSpanElement).style.color = "var(--text-secondary)";
+                        (e.currentTarget as HTMLSpanElement).style.borderColor = "var(--border)";
+                        (e.currentTarget as HTMLSpanElement).style.background = "var(--bg-secondary)";
+                      }
+                    }}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          
-          {/* Frameworks & Tools */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-border">
-            <h3 className="text-xl font-semibold mb-4 text-olive">Frameworks & Tools</h3>
-            <div className="flex flex-wrap gap-3">
-              {frameworks.map((framework, index) => (
-                <div key={index} className="skill-item">
-                  {framework}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-        
       </div>
     </section>
-  );
-};
-
-const SkillBar = ({ name, percentage }: { name: string; percentage: number }) => {
-  return (
-    <div>
-      <div className="flex justify-between mb-1">
-        <span className="font-medium">{name}</span>
-        <span className="text-sm text-muted-foreground">{percentage}%</span>
-      </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <div 
-          className="h-full bg-gradient-to-r from-olive to-tan"
-          style={{ width: `${percentage}%` }}
-        ></div>
-      </div>
-    </div>
   );
 };
 
