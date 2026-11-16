@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { RESUMES } from "./Navbar";
 
-const ROLES = [
-  "Software Engineer",
-  "AI Enthusiast",
-  "Game Developer",
-  "System Designer",
-];
+const ROLES = ["Software Engineer", "AI Enthusiast", "Game Developer", "System Designer"];
+
+const stroke = {
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
 
 const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -14,6 +17,10 @@ const Hero = () => {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayed(ROLES[0]);
+      return;
+    }
     const current = ROLES[roleIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
@@ -24,187 +31,63 @@ const Hero = () => {
     } else if (deleting && displayed.length > 0) {
       timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setRoleIndex((i) => (i + 1) % ROLES.length);
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setRoleIndex((i) => (i + 1) % ROLES.length);
+      }, 300);
     }
-
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIndex]);
 
   return (
-    <section
-      id="home"
-      className="bg-grid"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        paddingTop: "80px",
-        paddingBottom: "48px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Ambient glow */}
-      <div style={{
-        position: "absolute",
-        top: "20%",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "600px",
-        height: "600px",
-        background: "radial-gradient(circle, rgba(124,106,247,0.08) 0%, transparent 70%)",
-        pointerEvents: "none",
-      }} />
-
-      <div className="container">
-        <div style={{ maxWidth: "680px" }}>
-          {/* Eyebrow */}
-          <div style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "13px",
-            color: "var(--accent-bright)",
-            marginBottom: "20px",
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-          }}>
-            <span style={{
-              display: "inline-block",
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              background: "var(--accent-bright)",
-              boxShadow: "0 0 8px var(--accent-bright)",
-              animation: "pulse 2s infinite",
-            }} />
-            available for opportunities
+    <header className="hero">
+      <div className="hero-top">
+        <h1>
+          Prince
+          <br />
+          Omuyeh
+        </h1>
+        <div className="portrait-wrap">
+          <div className="portrait">
+            <img src="/pfp.jpg" alt="Portrait of Prince Omuyeh" width={240} height={240} />
           </div>
-
-          {/* Name */}
-          <h1 style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "clamp(40px, 7vw, 72px)",
-            fontWeight: 700,
-            lineHeight: 1.1,
-            color: "var(--text-primary)",
-            marginBottom: "16px",
-            letterSpacing: "-0.02em",
-          }}>
-            Prince<br />
-            <span style={{ color: "var(--accent-bright)" }}>Omuyeh</span>
-          </h1>
-
-          {/* Typing role */}
-          <div style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "clamp(16px, 2.5vw, 22px)",
-            color: "var(--text-secondary)",
-            marginBottom: "24px",
-            height: "32px",
-            display: "flex",
-            alignItems: "center",
-            gap: "2px",
-          }}>
-            <span style={{ color: "var(--accent-cyan)" }}>&gt; </span>
-            <span>{displayed}</span>
-            <span style={{
-              display: "inline-block",
-              width: "2px",
-              height: "1.1em",
-              background: "var(--accent-bright)",
-              animation: "blink 1s step-end infinite",
-              marginLeft: "1px",
-            }} />
-          </div>
-
-          {/* Tagline */}
-          <p style={{
-            fontSize: "17px",
-            color: "var(--text-secondary)",
-            lineHeight: 1.7,
-            marginBottom: "40px",
-            maxWidth: "520px",
-          }}>
-            Building intelligent systems and interactive experiences.
-            <br />CS grad from Lehigh University.
-          </p>
-
-          {/* CTAs */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px" }}>
-            <a href="#projects" className="btn-primary">
-              View my work <ArrowRight size={15} />
-            </a>
-            <a href="#contact" className="btn-secondary">
-              Get in touch
-            </a>
-          </div>
-
-          {/* Social links */}
-          <div style={{ display: "flex", gap: "20px" }}>
-            {[
-              { href: "https://github.com/peo226", Icon: Github, label: "GitHub" },
-              { href: "https://www.linkedin.com/in/prince-omuyeh-828517218/", Icon: Linkedin, label: "LinkedIn" },
-              { href: "mailto:princeomuyeh@gmail.com", Icon: Mail, label: "Email" },
-            ].map(({ href, Icon, label }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noopener noreferrer"
-                aria-label={label}
-                style={{
-                  color: "var(--text-muted)",
-                  transition: "var(--transition)",
-                  display: "flex",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-bright)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}
-              >
-                <Icon size={20} />
-              </a>
-            ))}
-          </div>
+          <p className="sticker">Open to Summer 2027 internships and full-time positions</p>
         </div>
       </div>
 
-      {/* Profile image — right side on desktop */}
-      <div style={{
-        position: "absolute",
-        right: "8%",
-        top: "50%",
-        transform: "translateY(-50%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }} className="hero-photo">
-        <div style={{
-          width: "260px",
-          height: "260px",
-          borderRadius: "50%",
-          border: "2px solid rgba(124,106,247,0.4)",
-          overflow: "hidden",
-          boxShadow: "0 0 40px rgba(124,106,247,0.15), 0 0 80px rgba(124,106,247,0.05)",
-          position: "relative",
-        }}>
-          <img
-            src="/pfp.jpg"
-            alt="Prince Omuyeh"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
+      <p className="typing" aria-label={ROLES.join(", ")}>
+        <span className="prompt" aria-hidden="true">&gt;</span>
+        <span aria-hidden="true">{displayed}</span>
+        <span className="caret" aria-hidden="true" />
+      </p>
+
+      <p className="tagline">
+        Building intelligent systems and interactive experiences.
+        <br />
+        Currently: MS in SWE @ Villanova University.
+        <br />
+        CS grad from Lehigh University.
+      </p>
+
+      <div className="social">
+        <a href="mailto:princeomuyeh@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" {...stroke}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/prince-omuyeh-828517218/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" {...stroke}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" /></svg>
+        </a>
+        <a href="https://github.com/peo226" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" {...stroke}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
+        </a>
       </div>
 
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.6; transform: scale(0.85); }
-        }
-        @media (max-width: 900px) {
-          .hero-photo { display: none !important; }
-        }
-      `}</style>
-    </section>
+      <p className="mobile-resumes">
+        <span>Resumes</span>
+        {RESUMES.map(({ label, href }) => (
+          <a key={href} href={href}>{label}</a>
+        ))}
+      </p>
+    </header>
   );
 };
 
